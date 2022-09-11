@@ -135,7 +135,6 @@ class Slash(commands.Cog):
         super().__init__()
 
     @app_commands.command(name="help", description= "List of Aspid commands")
-    @app_commands.guilds(discord.Object(id= 567767402062807055))
     async def slash_help(self, interaction: discord.Interaction):
         lang = self.bot.get_languages(interaction.guild)
         view = PageButton(lang)
@@ -149,7 +148,6 @@ class Slash(commands.Cog):
 
 
     @app_commands.command(name="twitter", description= "Log in to write as your character")
-    @app_commands.guilds(discord.Object(id= 567767402062807055))
     async def twitter_login(self, interaction: discord.Interaction):
         lang = self.bot.get_languages(interaction.guild)
         await interaction.response.send_modal(Form(self.bot, lang))
@@ -164,7 +162,6 @@ class Slash(commands.Cog):
 
     @app_commands.command(name="twit", description= "Write as your character!")
     @app_commands.autocomplete(choices=rps_autocomplete)
-    @app_commands.guilds(discord.Object(id= 567767402062807055))
     async def twitter_post(self, interaction: discord.Interaction, choices:str, *, text:str):
         df = self.bot.characters
         char = df.loc[(df['user'] == interaction.user.id) & (df['login'] == choices)]
@@ -180,7 +177,6 @@ class Slash(commands.Cog):
 
     @app_commands.command(name="delete_twitter", description= "Delete your character")
     @app_commands.autocomplete(choices=rps_autocomplete)
-    @app_commands.guilds(discord.Object(id= 567767402062807055))
     async def twitter_delete(self, interaction: discord.Interaction, choices:str):
         lang = self.bot.get_languages(interaction.guild)
         df = self.bot.characters
