@@ -11,7 +11,7 @@ activity = discord.Activity(
     name = "ваши крики | /help"
 )
 
-path = os.path.realpath()
+path = os.path.realpath(__path__)
 
 aspid = Aspid(
     intents = intents,
