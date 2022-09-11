@@ -11,16 +11,18 @@ activity = discord.Activity(
     name = "ваши крики | /help"
 )
 
+path = os.path.realpath()
+
 aspid = Aspid(
     intents = intents,
     activity = activity,
-    data_folder= './Data/',
-    localization_folder= './Localization/',
+    data_folder= f'{path}/Data/',
+    localization_folder= f'{path}/Localization/',
     config= 'config.yml'
 )
 
 async def main():
-    for f in os.listdir('./Cogs'):
+    for f in os.listdir(f'{path}/Cogs'):
         if f.endswith('.py'):
             await aspid.load_extension(f'Cogs.{f[:-3]}')
     await aspid.start(aspid.config['DISCORD_TOKEN'])
