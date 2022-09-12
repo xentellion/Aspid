@@ -1,3 +1,4 @@
+from typing import Literal, Optional
 import pytz
 import yaml
 import discord
@@ -101,6 +102,13 @@ class Initialize(commands.Cog):
         self.bot.config['DEAD'] = dead
         with open(self.bot.config_path, 'w', encoding="utf8") as file:
             yaml.dump(self.bot.config, file)
+
+    @commands.command(name='sync') 
+    @commands.has_permissions(administrator=True)
+    async def sync(self, ctx) -> None:
+        synced = await ctx.bot.tree.sync()
+        await ctx.send(f"Synced {len(synced)} commands globally")
+        return
 
 async def setup(bot):
     await bot.add_cog(Initialize(bot))
