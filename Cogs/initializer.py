@@ -82,10 +82,10 @@ class Initialize(commands.Cog):
   
     @tasks.loop(hours= 12)
     async def reminder(self):
-        ch = await self.bot.fetch_channel(Enums.AspidChannel)
-        embed = discord.Embed(color = discord.Colour.red())
-        embed.set_image(url= "https://media.discordapp.net/attachments/614108079545647105/614108112730718249/primal_aspid.jpg?width=676&height=474")
-        await ch.send(embed=embed)
+        # ch = await self.bot.fetch_channel(Enums.AspidChannel)
+        # embed = discord.Embed(color = discord.Colour.red())
+        # embed.set_image(url= "https://media.discordapp.net/attachments/614108079545647105/614108112730718249/primal_aspid.jpg?width=676&height=474")
+        # await ch.send(embed=embed)
         count = 0
         for guild in self.bot.guilds:
             role = guild.get_role(self.bot.custom_guilds_list.at[guild.id, 'dead'])
