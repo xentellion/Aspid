@@ -20,7 +20,7 @@ class Aspid(commands.Bot):
             file.seek(0)
             self.config = yaml.safe_load(file)
             if type(self.config) is not dict:
-                yaml.dump({"BOT_PREFIX": "", "DEAD": 0, "DISCORD_TOKEN": ""}, file)
+                yaml.dump({"BOT_PREFIX": None, "DEAD": 0, "DISCORD_TOKEN": None}, file)
                 raise EmptyConfig(self.config_path)
             elif self.config['BOT_PREFIX'] == "":
                 raise EmptyConfig(self.config_path)

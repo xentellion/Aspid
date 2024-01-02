@@ -1,4 +1,3 @@
-from typing import Literal, Optional
 import pytz
 import yaml
 import discord
