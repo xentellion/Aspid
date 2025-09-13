@@ -79,7 +79,7 @@ class Initialize(commands.Cog):
 
     async def get_image_collections(self, id, fumos=False):
         collection = await self.bot.fetch_channel(id)
-        collection = [message async for message in collection.history(limit=200)]
+        collection = [message async for message in collection.history(limit=1000)]
         return [i.content if fumos else i.attachments[0].url for i in collection]
 
     @tasks.loop(hours=12)

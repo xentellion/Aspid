@@ -61,22 +61,6 @@ class BasicCommands(commands.Cog):
         else:
             await ctx.send(random.choice(lang["ask_answers"]))
 
-    @commands.command(name="poll", help="Start a poll with stated question")
-    async def poll(self, ctx, *, message=""):
-        lang = self.bot.get_languages(ctx.guild)
-        if len(message) < 1800:
-            if message == "":
-                await ctx.send(lang["vote_short"])
-                return
-            embed = discord.Embed(
-                title=lang["vote_head"],
-                description=f"**{message}**\n\n <:THK_Good:575051447599628311> {lang['vote_good']} \n <:THK_Bad:575796719078473738> {lang['vote_bad']}",
-                color=discord.Colour.red(),
-            )
-            mes = await ctx.send(embed=embed)
-            await mes.add_reaction(self.bot.get_emoji(Enums.Good))
-            await mes.add_reaction(self.bot.get_emoji(Enums.Bad))
-
     @commands.command(name="join", help="Add Aspid to your server!", pass_context=True)
     async def join(self, ctx):
         lang = self.bot.get_languages(ctx.guild)
@@ -93,22 +77,6 @@ class BasicCommands(commands.Cog):
             await ctx.message.author.send(embed=embed)
         except:
             await ctx.send(lang["dm_fail"])
-
-    @commands.command(name="code", help="github link")
-    async def code(self, ctx):
-        lang = self.bot.get_languages(ctx.guild)
-        embed = discord.Embed(
-            title=lang["code_head"],
-            color=discord.Colour.red(),
-            description=lang["code_body"],
-        )
-        embed.add_field(
-            name="** **", value=f"<t:{int(datetime.datetime.now().timestamp())}:R>"
-        )
-        embed.set_image(
-            url="https://media.discordapp.net/attachments/614108079545647105/629782304738377738/3032408cf9e547dc.png"
-        )
-        await ctx.send(embed=embed)
 
     @commands.command(name="grub", help="Take a look at these grubs!")
     async def grub(self, ctx):

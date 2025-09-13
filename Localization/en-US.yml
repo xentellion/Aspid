@@ -146,21 +146,7 @@
         - "SHOOTING"
         - "MISCELLANEOUS"
         - "DICE ROLL"
-        - "TWITTER"
     help:
         - "**$gun** - play russian roulette\n **$shoot** *@User* - shoot other person\n **$save** - Return everyone to life (admin only)"
-        - "**f** - press to pay respect\n**$ask** *question* - ask aspid about something\n**$daddy** - don't do it\n**$code** - more info about the bot\n**$grub** - take a look at cosplay grubs\n**$join** - add bot to your server\n**$pet** - pet aspid\n**$pet** *@User* - pet other person\n**$pick** *option 1 | option 2 | ...*  - let aspid make a choise\n**$poll** *user message* - start polling\n**$techo** *seconds* *message* - write temporary message\n**$server** - check server info"
-        - "**$roll** - main cimmand for dice rolling. Each separate dice is presented as `xdy`, where `x` and `y` are numbers. For example, to roll a simple 20-faced dice you have to roll `1d20`.\n\nYou can add modifiers or even other dices to your rolls. All you have to do is write arythmetic sign between expressions: `1d20 + 5` or `1d6 + 1d6`. You can also write commentary after the roll and use parentesis. Example:, `$roll 2d20 + 5 Example`"
-        - "System, referred as **Twitter** is a name for a slash command system, that allows to write messages **as different character**\n\n**/twitter** - Register a user. Requires a name and optional link for image for avatar\n**/twit** - slash command for writing message as character. Select you character from the list and write the message.\n**/delete_twitter** - Delete the character."
-
-    char_form: "Register an account"
-    char_login: "Set your character name"
-    char_avatar: "Paste link with your character avatar"
-    char_avatar_link: "Insert link here"
-    char_join: "has joined the network!"
-    char_delete_confirm: "Are you sure you want to delete your character?"
-    char_delete_choice:
-        - "YES"
-        - "NO"
-    char_delete: "Character has been deleted"
-    char_delete_cancel: "Deletion cancelled"
+        - "**f** - press to pay respect\n**$ask** *question* - ask aspid about something\n**$daddy** - don't do it\n**$grub** - take a look at cosplay grubs\n**$join** - add bot to your server\n**$pet** - pet aspid\n**$pet** *@User* - pet other person\n**$pick** *option 1 | option 2 | ...*  - let aspid make a choise\n**$techo** *seconds* *message* - write temporary message\n**$server** - check server info"
+        - "**$roll** - main cimmand for dice rolling. Each separate dice is presented as `xdy`, where `x` and `y` are numbers. For example, to roll a simple 20-faced dice you have to roll `1d20`.\n\nYou can add modifiers or even other dices to your rolls. All you have to do is write arythmetic sign between expressions: `1d20 + 5` or `1d6 + 1d6`. You can also write commentary after the roll and use parentesis. Example:, `$roll 2d20 + 5 Example`" 
